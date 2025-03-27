@@ -1,15 +1,18 @@
-# Project Videogame SynapseRunner
+# Project Videogame: SynapseRunner
 
 ![Logo](logo.png)
 
-**A 3D endless runner with procedural generation, set in a cyberpunk world with a low-poly visual style reminiscent of the PlayStation 2 era made in Unity.**
+## A 3D endless runner with procedural generation
 
-**Jesús Ángel Neri Hernández | Jorge Guzmán Cabrera**  
+Set in a cyberpunk world with a low-poly visual style reminiscent of the PlayStation 2 era.  
+Made in Unity.
+
+**Jesús Ángel Neri Hernández** | **Jorge Guzmán Cabrera**  
 **Universidad Iberoamericana León**  
-**Interactive Digital Design**  
-**Course: Programación de Interacción**  
-**Instructor: Prof. Enrique Kato Romo**  
-**March 2025**
+Interactive Digital Design  
+**Course:** Programación de Interacción  
+**Instructor:** Prof. Enrique Kato Romo  
+**Date:** March 2025
 
 ---
 
@@ -32,26 +35,26 @@
 
 ## Introduction
 
-This document serves as the paper that will contain the content of this project for the Interaction Programming class. It will include the concept of the game, logic of the game, and the challenges encountered throughout development.  
-The tools used in this project will be Unity (version 6000.0.36f1) and Maya 3D.
+This document serves as the paper that will contain the content of this project for the Interaction Programming class. It includes the game concept, game logic, and challenges encountered throughout development.  
+Tools: Unity (version 6000.0.36f1) and Maya 3D.
 
 ---
 
 ## Game Concept
 
-A first-person 3D action game where the player controls an apostle who must dodge obstacles, collect mechaparts, and survive as long as possible in an infinitely procedurally generated hallway. The game is set in a cyberpunk world with a hacker aesthetic and low-poly visuals. The apostle can upgrade their abilities and equipment as they progress.
+A first-person 3D action game where the player controls an apostle who must dodge obstacles, collect mechaparts, and survive as long as possible in an infinitely procedurally generated hallway. The game is set in a cyberpunk world with a hacker aesthetic and low-poly visuals.
 
 ### Genre and Theme
 
-- **Genre:** Action
-- **Theme:** Low-poly, retro, with cyberpunk elements (CRT monitors, lines of code, digital interfaces) and a dark yet colorful atmosphere.
+**Genre:** Action  
+**Theme:** Low-poly, retro, with cyberpunk elements (CRT monitors, lines of code, digital interfaces), and a dark yet colorful atmosphere.
 
 ### Graphic Style
 
 - Cyberpunk
 - Noir Futurista
 - Estética Hacker
-- Inspirations:
+- **Inspirations:**
   - _Ghost in the Shell_ (1995)
   - Low Poly (2000)
 
@@ -59,56 +62,56 @@ A first-person 3D action game where the player controls an apostle who must dodg
 
 #### Sequence
 
-- **Structure:** Linear (the player moves forward in an infinitely procedurally generated hallway)
-- **Number of Players:** Single-player
+- **Structure:** Linear (infinite hallway)
+- **Players:** Single-player
 
 #### Technical Aspects
 
 - **3D Game**
-- **Camera System:** 3D First Person
+- **Camera System:** First Person
 
 ### Background
 
 #### Story Synopsis
 
-In a dystopian future, humanity has lost its spiritual connection and is enslaved by an artificial intelligence named EVA. You are an apostle, a chosen one tasked with restoring faith and freeing humanity from the simulation controlled by EVA. Using divine abilities and ancient technology, you must navigate an endless hallway filled with system-generated obstacles and enemies, while collecting mechaparts and upgrading your abilities to complete your mission.
+In a dystopian future, humanity is enslaved by an artificial intelligence named EVA. You are an apostle, chosen to restore faith and free humanity. Navigate an endless hallway with divine abilities and collect mechaparts to upgrade and survive.
 
 ### Gameplay Details
 
 #### Objective
 
-- Survive as long as possible.
-- Collect mechaparts to upgrade abilities and unlock equipment.
+- Survive as long as possible
+- Collect mechaparts to upgrade abilities
 
 #### How to Win / Lose
 
-- Lose if you hit an obstacle or are caught by enemies.
+- **Lose** if you hit an obstacle or get caught by enemies
 
 #### Game Modes
 
-- Single-player (endless runner).
+- Single-player (endless runner)
 
 #### Game Structure
 
-- The game is infinite, with a procedurally generated hallway.
-- Difficulty increases over time (more obstacles, faster enemies, etc.).
-- No levels, but the player can upgrade their weapon with collected mechaparts.
+- Procedurally generated infinite hallway
+- Difficulty increases over time
+- Player upgrades weapon with collected parts
 
 #### Basic Controls
 
-- **WASD** for movement
-- **Mouse** for shooting
+- `WASD`: Movement
+- `Mouse`: Shooting
 
 #### Ending
 
-The game has no defined ending, but players can compete for their personal best or compare scores with friends.
+The game has no defined ending; it's based on personal scores.
 
 #### Why is this Fun?
 
-- Easy to learn but hard to master.
-- Procedural generation ensures every run is unique.
-- The cyberpunk aesthetic with a religious twist creates a unique and captivating atmosphere.
-- Progression (upgrades and unlocks) keeps players motivated.
+- Easy to learn, hard to master
+- Procedural uniqueness
+- Aesthetic atmosphere
+- Progression through upgrades
 
 ---
 
@@ -116,7 +119,7 @@ The game has no defined ending, but players can compete for their personal best 
 
 ### 3D Objects
 
-On older games the number of polygons that were in the models were usually of X per model.
+Old-school poly count inspirations.
 
 ---
 
@@ -124,41 +127,38 @@ On older games the number of polygons that were in the models were usually of X 
 
 ### Movement
 
-The player can move through the X axis, so it can avoid obstacles, but it cannot go forward nor backward. In addition, the player has a **weapon** that allows them to jump.
+- Player moves on the **X axis** to avoid obstacles
+- Cannot move forward/backward
+- **Weapon** allows player to jump
 
 ---
 
 ## Collaborative Development Workflow
 
-To ensure efficient collaboration between team members, a basic version control workflow using Git was established.
+To collaborate efficiently, we use Git. Here's the workflow:
 
-### Git Workflow
-
-1. **Synchronize with the remote repository:**
+1. **Pull the latest changes:**
 
    ```bash
    git pull
    ```
 
-2. **Work on your assigned tasks in Unity.**
+2. **Work on your tasks in Unity**
 
-3. **Save all progress within Unity.**
-
-4. **Stage and commit your changes:**
+3. **Stage and commit changes:**
 
    ```bash
    git add .
    git commit -m "Implemented X feature / Fixed Y bug"
    ```
 
-5. **Push to the remote repository:**
+4. **Push to remote:**
 
    ```bash
    git push
    ```
 
-6. **Teammate pulls latest changes:**
-
+5. **Your teammate pulls before starting work:**
    ```bash
    git pull
    ```
@@ -167,13 +167,13 @@ To ensure efficient collaboration between team members, a basic version control 
 
 ### Working with Feature Branches
 
-1. **Create and switch to a new branch:**
+1. **Create branch:**
 
    ```bash
    git checkout -b feature-branch-name
    ```
 
-2. **Make changes and test.**
+2. **Work and test locally**
 
 3. **Commit and push:**
 
@@ -183,39 +183,24 @@ To ensure efficient collaboration between team members, a basic version control 
    git push origin feature-branch-name
    ```
 
-4. **Open a Pull Request on GitHub.**
+4. **Open Pull Request on GitHub**
 
 ---
 
-### Merging Feature Branch into `main`
+### Merging a Feature Branch
 
-1. **Switch to `main`:**
-
+1. Checkout main:
    ```bash
    git checkout main
-   ```
-
-2. **Pull latest changes:**
-
-   ```bash
    git pull
-   ```
-
-3. **Merge branch:**
-
-   ```bash
    git merge feature-branch-name
-   ```
-
-4. **Resolve conflicts if needed.**
-
-5. **Push updated `main`:**
-
-   ```bash
    git push
    ```
 
-Or merge via GitHub Pull Request.
+Or via GitHub:
+
+- Open repo > Pull Requests > New Pull Request
+- Review > Merge
 
 ---
 
@@ -223,87 +208,89 @@ Or merge via GitHub Pull Request.
 
 ### Daily Workflow
 
-1. Pull latest changes:
+1. `git pull`
+2. `git checkout -b feature-branch-name`
+3. Work & test in Unity
+4. `git add .`
+5. `git commit -m "feat: add jump mechanic"`
+6. `git push origin feature-branch-name`
+7. Open a Pull Request
 
-   ```bash
-   git pull
-   ```
+### Merging via Pull Request
 
-2. Create or switch to a branch:
-
-   ```bash
-   git checkout -b feature-branch-name
-   ```
-
-3. Make and test changes.
-
-4. Stage and commit:
-
-   ```bash
-   git add .
-   git commit -m "feat: add jump mechanic"
-   ```
-
-5. Push to GitHub:
-
-   ```bash
-   git push origin feature-branch-name
-   ```
-
-6. Open a Pull Request to merge into `main`.
-
----
+- Go to GitHub
+- New PR > Add description > Create > Merge
 
 ### Commit Message Format
 
-- `feat:` new feature (e.g., `feat: add enemy AI`)
-- `fix:` bug fix
-- `refactor:` code refactor
-- `style:` formatting
-- `docs:` documentation
-- `chore:` maintenance
-
----
+- `feat:` New feature
+- `fix:` Bug fix
+- `refactor:` Code change
+- `style:` Formatting
+- `docs:` Documentation
+- `chore:` Maintenance
 
 ### Tracking Progress
 
-- Use GitHub Issues and Projects
-- Reference issues in commits: `fix: resolve camera bug #7`
+- Use GitHub Issues for bugs/tasks
+- Reference in commits (`fix: resolve camera bug #7`)
+- Use Projects/Milestones
 
----
+### Repository
 
-### Repository and Permissions
-
-**Repository URL:**  
+**URL:**  
 [https://github.com/jesusneri1024/SynapseRunner](https://github.com/jesusneri1024/SynapseRunner)
 
-**Clone the project:**
+**Clone:**
 
 ```bash
 git clone https://github.com/jesusneri1024/SynapseRunner.git
 ```
 
-**Add a collaborator:**
+**Add Collaborator:**
 
-1. Go to `Settings > Collaborators and teams`
-2. Click `Add collaborator`
-3. Enter GitHub username and assign access
-
----
+- Settings > Collaborators
+- Add username with Write/Admin access
 
 ### Weekly Sync Guidelines
 
-- Review open PRs
-- Merge into `main`
-- Update the development journal
+- Review PRs
+- Merge tested branches
+- Update development journal
+
+### Why Version Control?
+
+- Enables team collaboration
+- Rollback capabilities
+- Full documentation of changes
 
 ---
 
-### Why Version Control Matters
+## Handling Large Files with ExternalAssets
 
-- Teamwork without conflicts
-- Easy rollback
-- Clear change history
+### What Goes in `ExternalAssets`
+
+- 3D Models (.fbx, .obj)
+- Audio (.wav, .mp3)
+- Textures (.png, .tga)
+
+### Not Synced with GitHub
+
+- The folder is listed in `.gitignore`
+- Files are manually downloaded via links in `README.txt`
+
+### AssetVerifier Script
+
+- Warns about missing files
+- Updates `README.txt` with links
+- Lists all external assets
+
+### Adding New Assets
+
+1. Place file in `Assets/ExternalAssets`
+2. Run Unity to trigger AssetVerifier
+3. Update `README.txt` with download link
+4. Notify teammates
 
 ---
 
@@ -311,8 +298,18 @@ git clone https://github.com/jesusneri1024/SynapseRunner.git
 
 ### Tuesday, March 25
 
-We implemented the base script for player movement, including physical locomotion and camera control. We also created a shooting script that allows the player to shoot projectiles. Although the mechanic works, further refinement is needed to correctly apply recoil physics that pushes the player in the opposite direction. A provisional scene was built to test these features in context.
+- Implemented player movement script
+- Created shooting mechanic
+- Built a provisional test scene
 
 ### Thursday, March 27
 
-Set up version control using GitHub to enable team collaboration. Created the repository at [https://github.com/jesusneri1024/SynapseRunner](https://github.com/jesusneri1024/SynapseRunner) and configured the project for shared development.
+- Set up GitHub repo: [https://github.com/jesusneri1024/SynapseRunner](https://github.com/jesusneri1024/SynapseRunner)
+- Progress:
+  - `feat:` Add recoil shooting + test level
+  - `chore:` Attach Rigidbody to player
+  - `feat:` Import character & camera movement scripts
+  - `feat:` AssetVerifier: auto update & file detection
+  - `docs:` Update `.gitignore` for `ExternalAssets`
+
+---
