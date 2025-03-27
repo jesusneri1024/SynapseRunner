@@ -72,3 +72,13 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# .gitignore big files
+*.fbx
+*.png
+*.psd
+Assets/ExternalAssets/
+
+
+# ¡Pero no ignores el README.txt!
+!Assets/ExternalAssets/README.txt
