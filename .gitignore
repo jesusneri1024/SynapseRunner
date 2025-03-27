@@ -77,8 +77,8 @@ crashlytics-build.properties
 *.fbx
 *.png
 *.psd
-Assets/ExternalAssets/
+# Ignore all files in ExternalAssets
+Assets/ExternalAssets/*
 
-
-# ¡Pero no ignores el README.txt!
+# EXCEPT the README.txt file
 !Assets/ExternalAssets/README.txt
