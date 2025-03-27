@@ -23,31 +23,39 @@ public class Shoot : MonoBehaviour
 
     }
 
-public float MapRange(float value, float inMin, float inMax, float outMin, float outMax)
+    public float MapRange(float value, float inMin, float inMax, float outMin, float outMax)
     {
         return outMin + (value - inMin) * (outMax - outMin) / (inMax - inMin);
     }
     void Update()
     {
-
-
-
         if (Input.GetMouseButtonDown(0))
         {
+            // Dispara la bala
             virtualBullet = Instantiate(sb, gunShoot.transform.position, gunShoot.transform.rotation);
             rb = virtualBullet.GetComponent<Rigidbody>();
             rb.AddRelativeForce(Vector3.forward * 3, ForceMode.Impulse);
 
-            //salto
+            // Dirección de disparo (hacia donde apunta el arma)
+            Vector3 shootDir = gunShoot.transform.forward;
 
-            float newValue = MapRange(10, 0f, 90f, 0f, 6f);
-            print(camera.transform.localRotation.x);
-            playerRB.AddRelativeForce(Vector3.up * camera.transform.localRotation.eulerAngles.magnitude * .3f, ForceMode.Impulse);
+            // Eliminar el eje Z para que no empuje hacia adelante o atrás
+            shootDir.z = 0f;
 
+            // Si el vector no es cero, invertimos y normalizamos
+            if (shootDir != Vector3.zero)
+            {
+                Vector3 pushDir = -shootDir.normalized; // Dirección opuesta a donde se dispara (solo X y Y)
+                playerRB.AddForce(pushDir * intensity, ForceMode.Impulse);
+            }
 
+            // Sonido
             sourcePium.PlayOneShot(pium);
         }
     }
 
-    
+
+
+
+
 }
