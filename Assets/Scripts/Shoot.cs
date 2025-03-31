@@ -52,6 +52,7 @@ public class Shoot : MonoBehaviour
             // Sonido
             sourcePium.PlayOneShot(pium);
 
+            //Destruir bala
             Destroy(virtualBullet, 2f);
 
         }
