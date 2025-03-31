@@ -11,7 +11,7 @@ public class Shoot : MonoBehaviour
     public int jump;
     [SerializeField] AudioClip pium;
     [SerializeField] AudioSource sourcePium;
-    public GameObject camera;
+    public GameObject camara;
     public float intensity;
 
 
