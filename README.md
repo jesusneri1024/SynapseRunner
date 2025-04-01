@@ -1,6 +1,6 @@
 # Project Videogame: SynapseRunner
 
-![Logo](logo.png)
+![Logo](logo_sr.png)
 
 ## A 3D endless runner with procedural generation
 
