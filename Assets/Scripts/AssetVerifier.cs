@@ -36,10 +36,18 @@ public class AssetVerifier : MonoBehaviour
             {
                 if (line.Contains("→"))
                 {
-                    string entry = line.Split('→')[0].Trim(); // e.g. Textures/CRT_screen.png
+                    string rawEntry = line.Split('→')[0].Trim();
+                    string entry = rawEntry;
+
+                    // Eliminar número inicial (e.g. "1. Audios/gun_sound.mp3")
+                    int dotIndex = rawEntry.IndexOf(". ");
+                    if (dotIndex != -1)
+                        entry = rawEntry.Substring(dotIndex + 2);
+
                     if (entry.Contains("."))
                     {
-                        existingEntries.Add(entry);
+                        string normalizedEntry = entry.Trim().ToLowerInvariant();
+                        existingEntries.Add(normalizedEntry);
 
                         string fullPath = Path.Combine(externalAssetsPath, entry).Replace("\\", "/");
                         if (!File.Exists(fullPath))
@@ -58,6 +66,8 @@ public class AssetVerifier : MonoBehaviour
             lines.Add("");
             lines.Add("To use the project correctly, download the following files and place them here:");
             lines.Add("");
+            lines.Add("After downloading, keep the file structure as shown.");
+            lines.Add("");
         }
 
         // 2. Buscar nuevos archivos y agregarlos
@@ -70,11 +80,13 @@ public class AssetVerifier : MonoBehaviour
             if (Path.GetExtension(fullPath) == ".meta" || ignoredFilenames.Contains(fileName)) continue;
 
             string relativePath = fullPath.Replace("\\", "/").Replace(externalAssetsPath + "/", "");
+            string normalizedRelativePath = relativePath.Trim().ToLowerInvariant();
 
-            if (!existingEntries.Contains(relativePath))
+            if (!existingEntries.Contains(normalizedRelativePath))
             {
-                newEntries.Add(relativePath);
-                existingEntries.Add(relativePath);
+                newEntries.Add(relativePath); // Se guarda el original (con mayúsculas si aplica)
+                existingEntries.Add(normalizedRelativePath);
+                Debug.Log($"[AssetVerifier] Added to README.txt: {relativePath}");
             }
         }
 
@@ -88,7 +100,6 @@ public class AssetVerifier : MonoBehaviour
         foreach (string path in newEntries)
         {
             lines.Add($"{count}. {path} → ");
-            Debug.Log($"[AssetVerifier] Added to README.txt: {path}");
             count++;
         }
 
