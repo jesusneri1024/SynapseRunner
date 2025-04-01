@@ -82,3 +82,5 @@ Assets/ExternalAssets/*
 
 # EXCEPT the README.txt file
 !Assets/ExternalAssets/README.txt
+
+!logo_sr.png
