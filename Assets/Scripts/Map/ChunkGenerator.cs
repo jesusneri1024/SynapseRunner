@@ -36,7 +36,7 @@ public class ChunkGenerator : MonoBehaviour
         // Destruir chunks que ya pasaron mucho al jugador
         for (int i = activeChunks.Count - 1; i >= 0; i--)
         {
-            if (activeChunks[i].transform.position.z < -chunkLength * 2f)
+            if (activeChunks[i].transform.position.z < -chunkLength * 3f)
             {
                 Destroy(activeChunks[i]);
                 activeChunks.RemoveAt(i);
