@@ -55,7 +55,7 @@ A first-person 3D action game where the player controls an apostle who must dodg
 - Noir Futurista
 - Estética Hacker
 - **Inspirations:**
-  - Ghost in the Shell (1995)
+  - _Ghost in the Shell_ (1995)
   - Low Poly (2000)
 
 ### Gameplay Mechanics
