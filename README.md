@@ -293,23 +293,3 @@ git clone https://github.com/jesusneri1024/SynapseRunner.git
 4. Notify teammates
 
 ---
-
-## Development Journal
-
-### Tuesday, March 25
-
-- Implemented player movement script
-- Created shooting mechanic
-- Built a provisional test scene
-
-### Thursday, March 27
-
-- Set up GitHub repo: [https://github.com/jesusneri1024/SynapseRunner](https://github.com/jesusneri1024/SynapseRunner)
-- Progress:
-  - `feat:` Add recoil shooting + test level
-  - `chore:` Attach Rigidbody to player
-  - `feat:` Import character & camera movement scripts
-  - `feat:` AssetVerifier: auto update & file detection
-  - `docs:` Update `.gitignore` for `ExternalAssets`
-
----
