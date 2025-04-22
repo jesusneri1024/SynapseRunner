@@ -357,7 +357,7 @@ MonoBehaviour:
   sb: {fileID: 3950823854036904955, guid: e9009dc58a854440e9f2cd0d58b1d3fc, type: 3}
   gunShoot: {fileID: 480279652}
   jump: 0
-  pium: {fileID: 8300000, guid: 0bf2b8c111ce34f578ade3b10b307de0, type: 3}
+  pium: {fileID: 8300000, guid: 7c5d43587bd55a7438f26c0f36ac8044, type: 3}
   sourcePium: {fileID: 0}
   camara: {fileID: 0}
   intensity: 5
