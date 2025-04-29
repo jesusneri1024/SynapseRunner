@@ -22,6 +22,11 @@ public class KillPlayerOnTouch : MonoBehaviour
             if (deathUI != null)
             {
                 deathUI.SetActive(true);
+
+
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+
             }
         }
     }
