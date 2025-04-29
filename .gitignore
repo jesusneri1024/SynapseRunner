@@ -73,10 +73,7 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
-# .gitignore big files
-*.fbx
-*.png
-*.psd
+
 # Ignore all files in ExternalAssets
 Assets/ExternalAssets/*
 
