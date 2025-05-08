@@ -75,7 +75,7 @@ crashlytics-build.properties
 
 
 # Ignore all files in ExternalAssets
-Assets/ExternalAssets/*
+# Assets/ExternalAssets/*
 
 # EXCEPT the README.txt file
 !Assets/ExternalAssets/README.txt
