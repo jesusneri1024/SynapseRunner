@@ -55,11 +55,20 @@ public class ChunkGenerator : MonoBehaviour
         }
         else
         {
-            spawnPosition = new Vector3(0, -2, 0); // posición inicial
+            spawnPosition = new Vector3(0, -2, 0);
         }
 
         GameObject newChunk = Instantiate(prefab, spawnPosition, Quaternion.identity);
+
+        // Ejemplo: agregar objetos dentro del chunk si tiene un "ChunkController"
+        ChunkController controller = newChunk.GetComponent<ChunkController>();
+        if (controller != null)
+        {
+            controller.GenerateContents();
+        }
+
         activeChunks.Add(newChunk);
     }
+
 
 }

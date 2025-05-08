@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9bbc63a34fb67a2499b872f1ff8705f7
+timeCreated: 1456755102
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 318298
+  packageName: Animation Pack - Basic Motions
+  packageVersion: 0.0.1
+  assetPath: Assets/PolyOne/Basic Motions/Scene/Demo_Basic Motions.unity
+  uploadId: 754667

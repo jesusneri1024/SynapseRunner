@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e476cbe7f7e979c4eb1269d3a2608bbb
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 318298
+  packageName: Animation Pack - Basic Motions
+  packageVersion: 0.0.1
+  assetPath: Assets/PolyOne/Basic Motions/Timeline/Basic Motions Timeline.playable
+  uploadId: 754667

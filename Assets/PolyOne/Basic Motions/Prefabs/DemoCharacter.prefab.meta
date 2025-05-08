@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 27e6b14b2ec69384bae1eacca06730d8
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 318298
+  packageName: Animation Pack - Basic Motions
+  packageVersion: 0.0.1
+  assetPath: Assets/PolyOne/Basic Motions/Prefabs/DemoCharacter.prefab
+  uploadId: 754667
