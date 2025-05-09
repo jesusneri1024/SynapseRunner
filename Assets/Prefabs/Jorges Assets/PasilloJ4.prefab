@@ -1138,7 +1138,7 @@ GameObject:
   - component: {fileID: 279702934040678441}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1392,7 +1392,7 @@ GameObject:
   - component: {fileID: 4806161249548053105}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1502,7 +1502,7 @@ GameObject:
   - component: {fileID: 9217784997977524856}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2152,6 +2152,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: laser (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4433957533061880009, guid: e4df91fcfd03db64a8886ced07b761fb, type: 3}
+      propertyPath: m_TagString
+      value: Laser
+      objectReference: {fileID: 0}
     - target: {fileID: 8224853341827910676, guid: e4df91fcfd03db64a8886ced07b761fb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.210003
@@ -2328,6 +2332,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: laser (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1946549451315924336, guid: 38dd247c47d66ff45a1539bdfb658a87, type: 3}
+      propertyPath: m_TagString
+      value: Laser
+      objectReference: {fileID: 0}
     - target: {fileID: 8677240518224189943, guid: 38dd247c47d66ff45a1539bdfb658a87, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.6800003
@@ -2498,6 +2506,10 @@ PrefabInstance:
     - target: {fileID: 337499663870297515, guid: a07a4ecfe21abbe4bb999b3580f74a2a, type: 3}
       propertyPath: m_Name
       value: laser (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2686977939691758410, guid: a07a4ecfe21abbe4bb999b3580f74a2a, type: 3}
+      propertyPath: m_TagString
+      value: Laser
       objectReference: {fileID: 0}
     - target: {fileID: 8717686896973889112, guid: a07a4ecfe21abbe4bb999b3580f74a2a, type: 3}
       propertyPath: m_LocalPosition.x

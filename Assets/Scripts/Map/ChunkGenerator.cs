@@ -4,12 +4,15 @@ using UnityEngine;
 public class ChunkGenerator : MonoBehaviour
 {
     public GameObject[] chunkPrefabs;
+    public GameObject initialChunkPrefab; // El prefab específico para los primeros chunks
     public float chunkLength = 5f;
     public int chunksAhead = 7;
     public float scrollSpeed = 5f;
+    public int initialChunksCount = 5; // Número de chunks iniciales específicos
 
     private Vector3 nextSpawnPoint = new Vector3(0, -2, 0);
     private List<GameObject> activeChunks = new List<GameObject>();
+    private int chunksSpawned = 0; // Contador para saber cuántos chunks se han generado
 
     void Start()
     {
@@ -46,7 +49,20 @@ public class ChunkGenerator : MonoBehaviour
 
     void SpawnChunk()
     {
-        GameObject prefab = chunkPrefabs[Random.Range(0, chunkPrefabs.Length)];
+        GameObject prefab;
+
+        scrollSpeed = scrollSpeed * 1.005f;
+
+        // Usar el chunk específico para los primeros N chunks
+        if (chunksSpawned < initialChunksCount && initialChunkPrefab != null)
+        {
+            prefab = initialChunkPrefab;
+        }
+        else
+        {
+            // Después usar chunks aleatorios
+            prefab = chunkPrefabs[Random.Range(0, chunkPrefabs.Length)];
+        }
 
         Vector3 spawnPosition = Vector3.zero;
         if (activeChunks.Count > 0)
@@ -68,7 +84,9 @@ public class ChunkGenerator : MonoBehaviour
         }
 
         activeChunks.Add(newChunk);
+        chunksSpawned++; // Incrementar el contador de chunks generados
     }
+
 
 
 }

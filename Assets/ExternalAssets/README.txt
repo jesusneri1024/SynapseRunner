@@ -34,3 +34,11 @@ After downloading, keep the file structure as shown.
 25. Images/textures 2/Metalic.png → 
 26. Images/textures 2/Normal.png → 
 27. Images/textures 2/Roughness.png → 
+28. Audios/pulse_sound_try1-89547.mp3 → 
+29. Audios/1911-reload-6248.mp3 → 
+30. Images/Instructions.png → 
+31. Audios/creature-sound-fx-alien-bot-digital-monster-sci-fi-chakongaudio-283669.mp3 → 
+32. Images/HUD BUENO.png → 
+33. Images/HUD.png → 
+34. NewGlitchDemoRegular Bitmap.asset → 
+35. NewGlitchDemoRegular.ttf → 

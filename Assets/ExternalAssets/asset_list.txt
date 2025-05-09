@@ -1,0 +1,4 @@
+Assets/ExternalAssets/.DS_Store
+Assets/ExternalAssets/README.txt
+Assets/ExternalAssets/asset_list.txt
+Assets/ExternalAssets/Textures/7.jpg

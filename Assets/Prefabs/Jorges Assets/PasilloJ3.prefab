@@ -650,6 +650,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: laser (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5229072438466287000, guid: d83f99a992b005046b0fee2e6f881873, type: 3}
+      propertyPath: m_TagString
+      value: Laser
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
