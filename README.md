@@ -4,6 +4,8 @@
 
 ## A 3D endless runner with procedural generation
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/jesusneri1024/SynapseRunner)
+
 Set in a cyberpunk world with a low-poly visual style reminiscent of the PlayStation 2 era.  
 Made in Unity.
 
