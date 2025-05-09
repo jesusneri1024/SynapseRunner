@@ -38,6 +38,13 @@ public class KillOnTouchLaser : MonoBehaviour
                 audioSource.PlayOneShot(deathSound);
             }
 
+            // Desactiva el generador de chunks
+            GameObject generator = GameObject.Find("ChunkGenerator");
+            if (generator != null)
+            {
+                generator.SetActive(false);
+            }
+
             // Mostrar UI de muerte
             if (deathUI != null)
             {

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ChunkGenerator : MonoBehaviour
 {
@@ -13,6 +14,12 @@ public class ChunkGenerator : MonoBehaviour
     private Vector3 nextSpawnPoint = new Vector3(0, -2, 0);
     private List<GameObject> activeChunks = new List<GameObject>();
     private int chunksSpawned = 0; // Contador para saber cuántos chunks se han generado
+
+    public int score = -60;
+    public int pointsPerChunk = 10; // Puedes ajustar los puntos por chunk
+
+    public TextMeshProUGUI scoreText;
+
 
     void Start()
     {
@@ -44,6 +51,11 @@ public class ChunkGenerator : MonoBehaviour
                 Destroy(activeChunks[i]);
                 activeChunks.RemoveAt(i);
             }
+        }
+
+        if (scoreText != null)
+        {
+            scoreText.text = "Puntaje: " + score.ToString();
         }
     }
 
@@ -85,6 +97,9 @@ public class ChunkGenerator : MonoBehaviour
 
         activeChunks.Add(newChunk);
         chunksSpawned++; // Incrementar el contador de chunks generados
+
+        score += pointsPerChunk;
+
     }
 
 

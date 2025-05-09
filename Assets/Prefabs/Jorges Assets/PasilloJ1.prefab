@@ -1032,8 +1032,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstaclePrefabs: []
   numberOfObstacles: 0
-  enemyPrefabs:
+  groundEnemies:
   - {fileID: 4022698240701102506, guid: 27e6b14b2ec69384bae1eacca06730d8, type: 3}
+  floatingEnemies:
+  - {fileID: 4414767942286772219, guid: 95fb29fc7f54541ed98eb4dfad48391e, type: 3}
   enemySpawnChance: 1
 --- !u!1 &3606824888066717243
 GameObject:

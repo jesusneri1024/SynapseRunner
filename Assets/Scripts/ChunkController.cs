@@ -6,9 +6,14 @@ public class ChunkController : MonoBehaviour
     public GameObject[] obstaclePrefabs;
     public int numberOfObstacles = 3;
 
-    [Header("Enemigos")]
-    public GameObject[] enemyPrefabs;
+    [Header("Enemigos de suelo")]
+    public GameObject[] groundEnemies;
+
+    [Header("Enemigos flotantes")]
+    public GameObject[] floatingEnemies;
+
     [Range(0f, 1f)] public float enemySpawnChance = 0.3f; // 30% de probabilidad
+
 
     public void GenerateContents()
     {
@@ -20,12 +25,21 @@ public class ChunkController : MonoBehaviour
             Instantiate(obstacle, transform.position + randomPos, Quaternion.identity, transform);
         }
 
-        // Generar enemigo (si se cumple la probabilidad)
-        if (Random.value < enemySpawnChance && enemyPrefabs.Length > 0)
+        // Generar enemigo de suelo
+        if (Random.value < enemySpawnChance && groundEnemies.Length > 0)
         {
-            Vector3 enemyPos = new Vector3(Random.Range(-2f, 2f), 0, Random.Range(1f, 4f));
-            GameObject enemy = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
-            Instantiate(enemy, transform.position + enemyPos, Quaternion.identity, transform);
+            Vector3 groundPos = new Vector3(Random.Range(-2f, 2f), 0f, Random.Range(1f, 4f));
+            GameObject groundEnemy = groundEnemies[Random.Range(0, groundEnemies.Length)];
+            Instantiate(groundEnemy, transform.position + groundPos, Quaternion.identity, transform);
         }
+
+        // Generar enemigo flotante
+        if (Random.value < enemySpawnChance && floatingEnemies.Length > 0)
+        {
+            Vector3 floatPos = new Vector3(Random.Range(-2f, 2f), Random.Range(1.5f, 7f), Random.Range(1f, 4f));
+            GameObject flyingEnemy = floatingEnemies[Random.Range(0, floatingEnemies.Length)];
+            Instantiate(flyingEnemy, transform.position + floatPos, Quaternion.identity, transform);
+        }
+
     }
 }

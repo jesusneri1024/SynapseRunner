@@ -15,6 +15,10 @@ public class DroneAI : MonoBehaviour
     private float recoilTime = 0.1f;
     private float recoilTimer = 0f;
 
+    public AudioClip shootSound;
+    private AudioSource audioSource;
+
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
@@ -23,6 +27,9 @@ public class DroneAI : MonoBehaviour
         {
             originalCannonPosition = cannonTransform.localPosition;
         }
+
+        audioSource = GetComponent<AudioSource>();
+
     }
 
     void Update()
@@ -73,6 +80,7 @@ public class DroneAI : MonoBehaviour
         {
             GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
 
+
             Rigidbody rb = projectile.GetComponent<Rigidbody>();
             if (rb && player)
             {
@@ -83,12 +91,27 @@ public class DroneAI : MonoBehaviour
 
                 rb.linearVelocity = velocity; // ¡velocidad directa!
             }
+
+            if (shootSound && audioSource)
+            {
+                audioSource.PlayOneShot(shootSound);
+            }
+
         }
 
         // Simula animación de retroceso
         if (cannonTransform)
         {
             isRecoiling = true;
+        }
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Bala"))
+        {
+            Destroy(gameObject); // Elimina el dron
         }
     }
 
