@@ -18,6 +18,11 @@ public class DroneAI : MonoBehaviour
     public AudioClip shootSound;
     private AudioSource audioSource;
 
+    public GameObject explosionPrefab;
+
+
+
+
 
     void Start()
     {
@@ -111,6 +116,12 @@ public class DroneAI : MonoBehaviour
     {
         if (other.CompareTag("Bala"))
         {
+
+            if (explosionPrefab)
+            {
+                Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            }
+
             Destroy(gameObject); // Elimina el dron
         }
     }

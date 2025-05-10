@@ -139,6 +139,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 5595261790791350069, guid: c1de7d3899d5346e6a5e561c4af931f5, type: 3}
   cannonTransform: {fileID: 0}
   shootSound: {fileID: 8300000, guid: 7c5d43587bd55a7438f26c0f36ac8044, type: 3}
+  explosionPrefab: {fileID: 6462073589088751567, guid: 965a6ff483b2c424f90cc26baa47396d, type: 3}
 --- !u!65 &5193456752351830781
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -43,3 +43,4 @@ After downloading, keep the file structure as shown.
 34. NewGlitchDemoRegular Bitmap.asset → 
 35. NewGlitchDemoRegular.ttf → 
 36. Audios/cinematic-hit-159487.mp3 → 
+37. Audios/small-explosion-94980.mp3 → 
