@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 1199226699280580049}
   m_Layer: 0
   m_Name: pipe 1 (1)
-  m_TagString: Untagged
+  m_TagString: Climbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1093,7 +1093,7 @@ GameObject:
   - component: {fileID: 5349307564533846148}
   m_Layer: 0
   m_Name: electric_box_44
-  m_TagString: Untagged
+  m_TagString: Climbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
