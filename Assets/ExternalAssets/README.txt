@@ -44,3 +44,6 @@ After downloading, keep the file structure as shown.
 35. NewGlitchDemoRegular.ttf → 
 36. Audios/cinematic-hit-159487.mp3 → 
 37. Audios/small-explosion-94980.mp3 → 
+38. Audios/Musica/MONOLITH (online-audio-converter.com).mp3 → 
+39. Audios/warning-alarm-loop-1-279206.mp3 → 
+40. Audios/glitch_03-226606.mp3 → 

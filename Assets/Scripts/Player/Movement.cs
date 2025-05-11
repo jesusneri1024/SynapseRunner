@@ -36,6 +36,17 @@ public class Movement : MonoBehaviour
 
     private GameObject climbableObject = null;
 
+    public AudioClip borderZoneClip;
+    private AudioSource borderAudioSource;
+
+    public AudioClip glitchSound;
+    private AudioSource glitchAudioSource;
+
+    public GameObject glitchEffectUI; // UI o panel de glitch visual
+
+
+
+
 
 
     void Start()
@@ -50,6 +61,15 @@ public class Movement : MonoBehaviour
         {
             borderWarningUI.SetActive(false);
         }
+
+        borderAudioSource = gameObject.AddComponent<AudioSource>();
+        borderAudioSource.playOnAwake = false;
+        borderAudioSource.loop = true; // para que suene mientras esté en el borde
+
+
+        glitchAudioSource = gameObject.AddComponent<AudioSource>();
+        glitchAudioSource.playOnAwake = false;
+        glitchAudioSource.loop = false;
     }
 
     void Update()
@@ -117,15 +137,29 @@ public class Movement : MonoBehaviour
             StartCoroutine(ClimbOverObstacle());
         }
 
-        // Caída rápida al mantener Shift en el aire
-        if (Input.GetKey(KeyCode.LeftShift))
+
+
+        // Verificar si el jugador está fuera de los límites permitidos
+        if (transform.position.x > 13f || transform.position.x < -13f ||
+            transform.position.y > 12f || transform.position.y < -5f)
         {
-            rb.AddForce(Vector3.down * 20f, ForceMode.Acceleration);
+            StartCoroutine(GlitchReset());
         }
 
 
 
     }
+
+    void FixedUpdate()
+    {
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, capsule.bounds.extents.y + 0.1f);
+
+        if (Input.GetKey(KeyCode.LeftShift) && !isGrounded)
+        {
+            rb.AddForce(Vector3.down * 20f, ForceMode.Acceleration);
+        }
+    }
+
 
     private void CheckBorderZone()
     {
@@ -150,7 +184,18 @@ public class Movement : MonoBehaviour
                         warningText.text = "¡Estás cerca del borde!\nPresiona W para avanzar.";
                     }
                 }
+
+                if (borderAudioSource != null && borderZoneClip != null)
+                {
+                    borderAudioSource.clip = borderZoneClip;
+                    borderAudioSource.Play();
+                }
+
+
             }
+
+
+
         }
         else
         {
@@ -164,6 +209,12 @@ public class Movement : MonoBehaviour
                 if (borderWarningUI != null)
                 {
                     borderWarningUI.SetActive(false);
+                }
+
+
+                if (borderAudioSource != null && borderAudioSource.isPlaying)
+                {
+                    borderAudioSource.Stop();
                 }
             }
 
@@ -260,6 +311,52 @@ public class Movement : MonoBehaviour
         isTouchingObstacle = false;
     }
 
+
+    private IEnumerator GlitchReset()
+    {
+        // Iniciar glitch visual animado
+        if (glitchEffectUI != null)
+        {
+            StartCoroutine(GlitchFlashEffect()); // Lanzamos animación asíncrona
+        }
+
+        // Reproducir sonido de glitch
+        if (glitchAudioSource != null && glitchSound != null)
+        {
+            glitchAudioSource.PlayOneShot(glitchSound);
+        }
+
+        yield return new WaitForSeconds(0.5f); // Duración del glitch
+
+        // Teletransportar
+        transform.position = Vector3.zero;
+        rb.linearVelocity = Vector3.zero;
+    }
+
+
+    private IEnumerator GlitchFlashEffect()
+    {
+        glitchEffectUI.SetActive(true);
+
+        CanvasGroup canvasGroup = glitchEffectUI.GetComponent<CanvasGroup>();
+        if (canvasGroup == null)
+        {
+            canvasGroup = glitchEffectUI.AddComponent<CanvasGroup>();
+        }
+
+        float duration = 0.3f;
+        float time = 0f;
+
+        while (time < duration)
+        {
+            canvasGroup.alpha = Random.Range(0.2f, 1f); // brillo glitch
+            yield return new WaitForSeconds(Random.Range(0.02f, 0.05f));
+            time += Time.deltaTime;
+        }
+
+        canvasGroup.alpha = 0f;
+        glitchEffectUI.SetActive(false);
+    }
 
 
 
