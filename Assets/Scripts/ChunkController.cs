@@ -14,6 +14,11 @@ public class ChunkController : MonoBehaviour
 
     [Range(0f, 1f)] public float enemySpawnChance = 0.3f; // 30% de probabilidad
 
+    [Header("Power-ups")]
+    public GameObject[] powerUpPrefabs;
+    [Range(0f, 1f)] public float powerUpSpawnChance = 0.2f; // 20% de probabilidad
+
+
 
     public void GenerateContents()
     {
@@ -40,6 +45,15 @@ public class ChunkController : MonoBehaviour
             GameObject flyingEnemy = floatingEnemies[Random.Range(0, floatingEnemies.Length)];
             Instantiate(flyingEnemy, transform.position + floatPos, Quaternion.identity, transform);
         }
+
+        // Generar power-up (como botiquín)
+        if (Random.value < powerUpSpawnChance && powerUpPrefabs.Length > 0)
+        {
+            Vector3 powerUpPos = new Vector3(Random.Range(-2f, 2f), 0.5f, Random.Range(1f, 4f));
+            GameObject powerUp = powerUpPrefabs[Random.Range(0, powerUpPrefabs.Length)];
+            Instantiate(powerUp, transform.position + powerUpPos, Quaternion.identity, transform);
+        }
+
 
     }
 }

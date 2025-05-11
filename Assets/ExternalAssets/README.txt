@@ -48,3 +48,5 @@ After downloading, keep the file structure as shown.
 39. Audios/warning-alarm-loop-1-279206.mp3 → 
 40. Audios/glitch_03-226606.mp3 → 
 41. Audios/robot-power-off-97246.mp3 → 
+42. Audios/male_hurt7-48124.mp3 → 
+43. Audios/item-equip-6904.mp3 → 

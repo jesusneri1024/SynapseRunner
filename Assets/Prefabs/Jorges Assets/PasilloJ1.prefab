@@ -1037,6 +1037,9 @@ MonoBehaviour:
   floatingEnemies:
   - {fileID: 4414767942286772219, guid: 95fb29fc7f54541ed98eb4dfad48391e, type: 3}
   enemySpawnChance: 1
+  powerUpPrefabs:
+  - {fileID: 5597207926167403035, guid: d506beb91250f414ba3ee7e3def9c933, type: 3}
+  powerUpSpawnChance: 0.2
 --- !u!1 &3606824888066717243
 GameObject:
   m_ObjectHideFlags: 0

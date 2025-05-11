@@ -14,7 +14,13 @@ public class PlayerHealth : MonoBehaviour
     public AudioClip deathSound;
     private AudioSource audioSource;
 
+    public AudioClip damageSound;
+
     private bool isDead = false;
+
+    [Header("Curación")]
+    public AudioClip healSound; // Sonido al recoger botiquín
+    public GameObject healEffectPrefab; // Partículas al curarse
 
     private void Start()
     {
@@ -30,7 +36,29 @@ public class PlayerHealth : MonoBehaviour
         {
             TakeDamage(25); // Ajusta el daño según necesites
             Destroy(collision.gameObject);
+            if (damageSound != null)
+            {
+                audioSource.PlayOneShot(damageSound);
+            }
 
+        }
+
+        else if (collision.collider.CompareTag("Botiquin"))
+        {
+            Heal(50); // Curar al jugador
+
+            // Reproduce sonido de curación
+            if (healSound != null)
+            {
+                audioSource.PlayOneShot(healSound);
+            }
+
+            // Instancia partículas
+            if (healEffectPrefab != null)
+            {
+                Instantiate(healEffectPrefab, transform.position, Quaternion.identity);
+            }
+            Destroy(collision.gameObject); // Destruir el botiquín al recogerlo
         }
     }
 
@@ -92,6 +120,16 @@ public class PlayerHealth : MonoBehaviour
             Cursor.visible = true;
         }
     }
+
+    void Heal(int amount)
+    {
+        if (isDead) return;
+
+        currentHealth += amount;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        UpdateHealthBar();
+    }
+
 
 
 }

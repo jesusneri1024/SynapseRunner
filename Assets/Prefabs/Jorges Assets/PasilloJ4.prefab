@@ -1693,6 +1693,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 144353865372713617}
+  - component: {fileID: -4696445219728591153}
   m_Layer: 0
   m_Name: PasilloJ4
   m_TagString: Untagged
@@ -1729,6 +1730,26 @@ Transform:
   - {fileID: 89051156645180252}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4696445219728591153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6683432610974604806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed4bdf7fd4afc40bc8cabde3fdeb4e06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstaclePrefabs: []
+  numberOfObstacles: 0
+  groundEnemies: []
+  floatingEnemies: []
+  enemySpawnChance: 0.3
+  powerUpPrefabs:
+  - {fileID: 5597207926167403035, guid: d506beb91250f414ba3ee7e3def9c933, type: 3}
+  powerUpSpawnChance: 0.2
 --- !u!1 &6894025523631914197
 GameObject:
   m_ObjectHideFlags: 0
